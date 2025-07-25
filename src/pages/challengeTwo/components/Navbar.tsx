@@ -5,11 +5,9 @@ import {
   TouchableOpacity,
   TextInput,
   StyleSheet,
-  Dimensions,
   Animated,
 } from 'react-native';
-
-const { width, height } = Dimensions.get('window');
+import { isMobile, screenWidth, screenHeight } from '../../../shared/utils';
 
 interface NavbarProps {
   title?: string;
@@ -17,8 +15,7 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ title = 'AEON' }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [slideAnim] = useState(new Animated.Value(-width));
-  const isMobile = width < 768;
+  const [slideAnim] = useState(new Animated.Value(-screenWidth));
   console.log('isMobile', isMobile);
 
   const navigationLinks = [
@@ -35,7 +32,7 @@ const Navbar: React.FC<NavbarProps> = ({ title = 'AEON' }) => {
     if (isMobileMenuOpen) {
       // Close menu
       Animated.timing(slideAnim, {
-        toValue: -width,
+        toValue: -screenWidth,
         duration: 300,
         useNativeDriver: false,
       }).start(() => setIsMobileMenuOpen(false));
@@ -221,8 +218,8 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 0,
     left: 0,
-    width: width * 0.8,
-    height: height,
+    width: screenWidth * 0.8,
+    height: screenHeight,
     backgroundColor: '#fff',
     zIndex: 999,
     paddingTop: 20,
