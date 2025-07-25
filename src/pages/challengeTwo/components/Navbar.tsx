@@ -225,7 +225,7 @@ const styles = StyleSheet.create({
     height: height,
     backgroundColor: '#fff',
     zIndex: 999,
-    paddingTop: 60,
+    paddingTop: 20,
     paddingHorizontal: 20,
   },
   mobileMenuHeader: {
