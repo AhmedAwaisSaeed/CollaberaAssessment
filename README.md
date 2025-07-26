@@ -44,6 +44,11 @@ src/
     └── AppNavigator.tsx
 ```
 
+## Demo Video
+
+You can watch a demo of all three challenges here:
+[Demo Video - Collabera Assessment](https://drive.google.com/file/d/16jhRNtN01ci2_7W7oWx8hKJh-CZimqgs/view?usp=sharing)
+
 ## Challenges
 
 ### Challenge 1 - Calculator
