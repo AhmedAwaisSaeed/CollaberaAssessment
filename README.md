@@ -1,97 +1,167 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Collabera Assessment
 
-# Getting Started
+A React Native application with three interactive challenges demonstrating different UI components and navigation patterns.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Project Structure
 
-## Step 1: Start Metro
+```
+src/
+├── assets/
+│   ├── images/
+│   ├── icons/
+│   └── fonts/
+├── pages/
+│   ├── challengeOne/
+│   │   ├── components/
+│   │   └── screens/
+│   │       ├── home/
+│   │       │   └── HomeScreen.tsx
+│   │       └── challengeOne/
+│   │           └── ChallengeOneScreen.tsx
+│   ├── challengeTwo/
+│   │   ├── components/
+│   │   └── screens/
+│   │       └── challengeTwo/
+│   │           └── ChallengeTwoScreen.tsx
+│   └── challengeThree/
+│       ├── components/
+│       └── screens/
+│           └── challengeThree/
+│               └── ChallengeThreeScreen.tsx
+├── shared/
+│   ├── components/
+│   ├── constants/
+│   ├── hooks/
+│   ├── utils/
+│   ├── styles/
+│   └── theme/
+├── core/
+│   ├── api/
+│   ├── config/
+│   ├── store/
+│   └── types/
+└── navigation/
+    └── AppNavigator.tsx
+```
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## Demo Video
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+You can watch a demo of all three challenges here:
+[Demo Video - Collabera Assessment](https://drive.google.com/file/d/16jhRNtN01ci2_7W7oWx8hKJh-CZimqgs/view?usp=sharing)
 
-```sh
-# Using npm
+## Challenges
+
+### Challenge 1 - Calculator
+A fully functional calculator with:
+- Basic arithmetic operations (+, -, ×, ÷)
+- Clear functionality
+- Percentage and sign change operations
+- iOS-style design
+
+### Challenge 2 - Custom Navbar
+A custom navigation bar with:
+- Four tabs: Home, Search, Favorites, Profile
+- Active state indicators
+- Smooth tab switching
+- Custom styling
+
+### Challenge 3 - Two Sum II: Input Array Is Sorted
+Given a 1-indexed array of integers `numbers` that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number. Let these two numbers be `numbers[index1]` and `numbers[index2]` where `1 <= index1 < index2 < numbers.length`. Return the indices of the two numbers, added by one, as an integer array `[index1, index2]` of length 2.
+
+- The tests are generated such that there is exactly one solution.
+- You may not use the same element twice.
+- Your solution must use only constant extra space.
+
+#### Example Usage
+```typescript
+function twoSum(numbers: number[], target: number): number[] {
+  let left = 0;
+  let right = numbers.length - 1;
+  while (left < right) {
+    const sum = numbers[left] + numbers[right];
+    if (sum === target) {
+      // Return 1-based indices
+      return [left + 1, right + 1];
+    } else if (sum < target) {
+      left++;
+    } else {
+      right--;
+    }
+  }
+  return [];
+}
+
+// Example calls:
+console.log(twoSum([2, 7, 11, 15], 9)); // Output: [1, 2]
+console.log(twoSum([2, 3, 4], 6));      // Output: [1, 3]
+console.log(twoSum([-1, 0], -1));       // Output: [1, 2]
+```
+
+#### Example Explanations
+- Input: numbers = [2, 7, 11, 15], target = 9
+  - Output: [1, 2] (2 + 7 = 9)
+- Input: numbers = [2, 3, 4], target = 6
+  - Output: [1, 3] (2 + 4 = 6)
+- Input: numbers = [-1, 0], target = -1
+  - Output: [1, 2] (-1 + 0 = -1)
+
+## Getting Started
+
+### Prerequisites
+- Node.js (>=18)
+- React Native CLI
+- iOS Simulator (for iOS development)
+- Android Studio (for Android development)
+
+### Installation
+
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. For iOS, install pods:
+```bash
+cd ios && pod install && cd ..
+```
+
+3. Start the Metro bundler:
+```bash
 npm start
-
-# OR using Yarn
-yarn start
 ```
 
-## Step 2: Build and run your app
+4. Run the app:
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
+For iOS:
+```bash
 npm run ios
-
-# OR using Yarn
-yarn ios
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+For Android:
+```bash
+npm run android
+```
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+## Navigation
 
-## Step 3: Modify your app
+The app uses React Navigation with a stack navigator. The main screen shows three buttons that navigate to each challenge:
 
-Now that you have successfully run the app, let's make changes!
+- **Challenge 1 - Calculator**: Navigate to a functional calculator
+- **Challenge 2 - Navbar**: Navigate to a custom navigation bar demo
+- **Challenge 3**: Navigate to interactive features demo
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+## Technologies Used
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+- React Native 0.80.2
+- React Navigation 6
+- TypeScript
+- React Native Screens
+- React Native Safe Area Context
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+## Features
 
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+- Type-safe navigation with TypeScript
+- Modern React Native patterns
+- Responsive design
+- Interactive UI components
+- Clean project structure
