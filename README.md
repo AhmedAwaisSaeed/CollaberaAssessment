@@ -51,19 +51,23 @@ You can watch a demo of all three challenges here:
 
 ## Challenges
 
-### Challenge 1 - Calculator
-A fully functional calculator with:
-- Basic arithmetic operations (+, -, ×, ÷)
-- Clear functionality
-- Percentage and sign change operations
-- iOS-style design
+### Challenge 1 - Simple Calculator
+A basic calculator that adds two numbers together:
+- Input fields for two numbers
+- Calculate sum functionality
+- Clear functionality to reset inputs
+- Keyboard-aware scrolling for better UX
+- Input validation with error alerts
+- Clean, modern UI design
 
-### Challenge 2 - Custom Navbar
-A custom navigation bar with:
-- Four tabs: Home, Search, Favorites, Profile
-- Active state indicators
-- Smooth tab switching
-- Custom styling
+### Challenge 2 - Responsive Navbar
+A responsive navigation bar with desktop and mobile support:
+- **Desktop**: Full horizontal navbar with navigation links and search functionality
+- **Mobile**: Hamburger menu with slide-out navigation
+- Navigation tabs: Showcase, Docs, Blog, Analytics, Templates, Enterprise
+- Search documentation input field
+- Smooth animations for mobile menu transitions
+- Responsive design that adapts to screen size
 
 ### Challenge 3 - Two Sum II: Input Array Is Sorted
 Given a 1-indexed array of integers `numbers` that is already sorted in non-decreasing order, find two numbers such that they add up to a specific target number. Let these two numbers be `numbers[index1]` and `numbers[index2]` where `1 <= index1 < index2 < numbers.length`. Return the indices of the two numbers, added by one, as an integer array `[index1, index2]` of length 2.
