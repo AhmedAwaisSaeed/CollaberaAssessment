@@ -3,6 +3,7 @@ import { View, Text, SafeAreaView, Alert } from 'react-native';
 import { styles } from './challengeTwoScreen.styles';
 import { ChallengeTwoScreenProps } from './challengeTwoScreen.types';
 import { Navbar } from '../../components';
+import { colors } from '../../../../shared/theme';
 
 const ChallengeTwoScreen: React.FC<ChallengeTwoScreenProps> = () => {
   const [searchText, setSearchText] = useState('');
@@ -25,9 +26,9 @@ const ChallengeTwoScreen: React.FC<ChallengeTwoScreenProps> = () => {
         onNavLinkPress={handleNavLinkPress}
         onSearchChange={handleSearchChange}
         showSearch={true}
-        brandColor="#2563eb"
-        backgroundColor="#fff"
-        textColor="#333"
+        brandColor={colors.primary}
+        backgroundColor={colors.background}
+        textColor={colors.text}
       />
       <View style={styles.content}>
         <Text style={styles.text}>Challenge 2 - Reusable Navbar Implementation</Text>

@@ -8,6 +8,7 @@ import {
   Animated,
 } from 'react-native';
 import { isMobile, screenWidth, screenHeight } from '../../../shared/utils';
+import { colors } from '../../../shared/theme';
 
 /**
  * Reusable Navbar Component
@@ -65,9 +66,9 @@ const Navbar: React.FC<NavbarProps> = ({
   onNavLinkPress,
   onSearchChange,
   showSearch = true,
-  brandColor = '#2563eb',
-  backgroundColor = '#fff',
-  textColor = '#333'
+  brandColor = colors.primary,
+  backgroundColor = colors.background,
+  textColor = colors.text
 }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [slideAnim] = useState(new Animated.Value(-screenWidth));
@@ -174,7 +175,7 @@ const Navbar: React.FC<NavbarProps> = ({
             <TextInput
               style={styles.searchInput}
               placeholder={searchPlaceholder}
-              placeholderTextColor="#999"
+              placeholderTextColor={colors.subtitle}
               value={searchText}
               onChangeText={handleSearchChange}
             />
@@ -272,7 +273,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 12,
     fontSize: 16,
-    color: '#333',
+    color: colors.text,
   },
   mobileMenuButton: {
     padding: 8,
@@ -284,7 +285,7 @@ const styles = StyleSheet.create({
   },
   hamburgerLine: {
     height: 2,
-    backgroundColor: '#333',
+    backgroundColor: colors.text,
     borderRadius: 1,
   },
   mobileOverlay: {
