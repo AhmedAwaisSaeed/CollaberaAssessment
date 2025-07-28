@@ -23,5 +23,23 @@ export const styles = StyleSheet.create({
     color: '#666',
     textAlign: 'center',
     lineHeight: 24,
+    marginBottom: 20,
+  },
+  featureList: {
+    alignSelf: 'stretch',
+    marginTop: 20,
+  },
+  featureItem: {
+    fontSize: 14,
+    color: '#555',
+    marginBottom: 8,
+    textAlign: 'left',
+  },
+  searchResult: {
+    fontSize: 16,
+    color: '#2563eb',
+    fontWeight: '600',
+    marginTop: 20,
+    textAlign: 'center',
   },
 }); 
